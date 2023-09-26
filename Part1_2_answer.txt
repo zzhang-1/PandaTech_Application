@@ -1,0 +1,11 @@
+Part 1 : what you already know: 
+language in python3: 
+  class Solution:
+    def minimumRightShifts(self, nums: List[int]) -> int:
+       
+
+Part 2 : Your ability to learn and relate new information
+language in python3: 
+  class Solution:
+    def countOperationsToEmptyArray(self, nums: List[int]) -> int:
+        
