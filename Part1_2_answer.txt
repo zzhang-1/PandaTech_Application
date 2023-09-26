@@ -1,7 +1,25 @@
 Part 1 : what you already know: 
 language in python3: 
+  """
+   general idea, we just need to conside to shift the arr once for all, we just need to make sure the last element is smaller than frist   
+   element then it is possible to get sorted array by right shift. 
+   for example: [3,4,5,1,2] in this array, where the part is not in order is 5, and 1, the rest are in order, so we take the first 
+   of array and put in the end  [1,2] + [3,4,5] we only need to see if 2 is smaller than 3, if not then there is no way to sort the array 
+   by right shift 
+   another example like [1, 4, 3 ,5] => [3, 5] + [1,4] => since 5 is greater than 1, there is no way to sorted array by right shift
+
+  """
   class Solution:
-    def minimumRightShifts(self, nums: List[int]) -> int:
+     def minimumRightShifts(self, nums: List[int]) -> int:
+          lst_len = len(nums)
+          for i in range(1, lst_len):
+              if nums[i] < nums[i-1]:
+                      # here is where the right shift. the when nums[i] < nums[i -1] 
+                      # the element after i will become front of array and the element before  
+                      # i will be the end of the array 
+                      nums = nums[i:]+nums[:i] 
+                      return lst_len-i if nums == sorted(nums) else -1
+          return 0
        
 
 Part 2 : Your ability to learn and relate new information
