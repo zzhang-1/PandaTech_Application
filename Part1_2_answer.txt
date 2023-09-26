@@ -24,6 +24,21 @@ language in python3:
 
 Part 2 : Your ability to learn and relate new information
 language in python3: 
+"""
+for this question, what we want is that we get the minimum value in the array and if the value is not the first element of array, 
+then we concate the nums array by move the first element to the end and and increase the count of operation. if it is , then we pop of the first element value. keep going until the num is []. 
+
+For the my solution, it might not be the best efficient solution. logically it works to solve the problem. but when the input is large, then it will take a long time to compute inorder to get the number of the operation. 
+"""
   class Solution:
     def countOperationsToEmptyArray(self, nums: List[int]) -> int:
+        count = 0 
+        while nums != []:
+            min_val = min(nums)
+            if nums[0] != min_val: 
+                nums = nums[1:]+[nums[0]]
+            else: 
+                nums.pop(0)
+            count += 1
+        return count
         
